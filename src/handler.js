@@ -24,10 +24,6 @@ const filteredBooks = (result) => {
   }, []);
 };
 
-// const read = (value) => {
-//   return books.filter((book) => book.reading === Boolean(value));
-// };
-
 const addBookHandler = (request, h) => {
   const {
     name,
@@ -75,7 +71,6 @@ const getAllBooksHandler = (request, h) => {
 
   if (name) {
     const result = books.filter((elem) => name.toLowerCase().split('').every((e) => `${elem.name}`.toLowerCase().includes(e)));
-    // console.log(result);
     const data = filteredBooks(result);
     return response('success', { data: { books: data } }, 200, h);
   } else if (reading) {
