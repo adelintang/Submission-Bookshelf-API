@@ -1,11 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable array-callback-return */
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable consistent-return */
-/* eslint-disable eol-last */
-/* eslint-disable no-else-return */
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable arrow-body-style */
 const { nanoid } = require('nanoid');
 const books = require('./books');
 
@@ -128,7 +120,7 @@ const editBookByIdHandler = (request, h) => {
       readPage,
       reading,
     };
-    
+
     return response('success', { message: 'Buku berhasil diperbarui' }, 200, h);
   }
 };
@@ -136,7 +128,7 @@ const editBookByIdHandler = (request, h) => {
 const deleteBookByIdHandler = (request, h) => {
   const { bookId } = request.params;
   const index = books.findIndex((item) => item.id === bookId);
-  
+
   if (index === -1) {
     return response('fail', { message: 'Buku gagal dihapus. Id tidak ditemukan' }, 404, h);
   } else {
